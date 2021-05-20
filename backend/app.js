@@ -6,6 +6,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const helmet = require("helmet");
 app.use(helmet());
+var cors = require('cors');
+app.use(cors());
 var favorites = [];
 
 //returns the favorites array
@@ -28,8 +30,11 @@ app.delete('/', (req, res) => {
 })      
 
 app.use(function(err, req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     console.log(err.stack)
     res.status(500).send('Something broke!')
+    next();
 })
 
 const PORT = process.env.PORT || 8080;
