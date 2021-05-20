@@ -14,6 +14,11 @@ export const getFavorites = () => {
       })
   }
 
+  //had to include refresh button for incase
+  const refreshFavorites = () => {
+    getFavorites();
+  }
+
 const FavoritesDisplay = () => {
 
     //Set up the constants and their initial state
@@ -35,16 +40,15 @@ const FavoritesDisplay = () => {
               "Content-Type": "application/json",
             },
           })
-        .then(response => response.json())
-        .then((responseData) => {
-          getFavorites();
-        })
+        .then(response => response.json(),
+        getFavorites());
     }
   
     //this is just where I render the div
     return( 
       <div>
         <div id="favoritessDiv" className="form-group">
+            <button className="btn btn-secondary" onClick={() => refreshFavorites()}>Refresh</button>
             <input type="text" id="favRemoveInput" onChange={ handleFavRemoveChange } value={favRemoveInput}></input>
             <button className="btn btn-warning" onClick={() => removeFromFavorites()}>Remove From Favorites</button>
             <table className="table" id="favoritesTable">
