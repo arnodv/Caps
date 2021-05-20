@@ -35,8 +35,10 @@ const FavoritesDisplay = () => {
               "Content-Type": "application/json",
             },
           })
-        .then(response => response.json(),
-        setTimeout(getFavorites(), 1000)); //had to use setTimeout due to the asyncronous nature of the call
+        .then(response => response.json())
+        .then((responseData) => {
+          getFavorites();
+        })
     }
   
     //this is just where I render the div
