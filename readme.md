@@ -6,7 +6,7 @@ After the first npm install cd into the frontend directory and run npm install.
 Run npm start in the frontend directory and use a second command line to run npm test in the main project directory.
 npm test can also be run in the frontend directory to perform a test there.
 
-In the frontend directory, in the package.json file change "proxy": "https://dry-refuge-63595.herokuapp.com" to "proxy": "http://localhost:8080" for local use.
+In the frontend directory, in the package.json file change "proxy": "https://dry-refuge-63595.herokuapp.com" to "proxy": "http://localhost:8080" and remove instances in fetch api's that contain https://dry-refuge-63595.herokuapp.com for local use.
 Run npm start in both the main directory and the frontend directory to start the application for usage.
 
 

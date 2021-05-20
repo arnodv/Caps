@@ -24,7 +24,7 @@ const SearchField = () => {
         let favInput = document.getElementById('favInput').value;
         let data = document.getElementById(favInput).attributes.value.value;
 
-        var url = '/?data=' + data + '';
+        var url = 'https://dry-refuge-63595.herokuapp.com/?data=' + data + '';
           return fetch(url, {
             method: "POST",
             headers: {

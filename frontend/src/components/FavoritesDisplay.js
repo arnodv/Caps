@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export const getFavorites = () => {
     var favoritesTableBody = document.getElementById('favoritesTableBody');
     favoritesTableBody.innerHTML = '';
-    fetch('/favs')
+    fetch('https://dry-refuge-63595.herokuapp.com/favs')
       .then(res=>res.json())
       .then(results=>{
         results.forEach((element, index) => {
@@ -28,7 +28,7 @@ const FavoritesDisplay = () => {
     const removeFromFavorites = () => {
         let favInput = document.getElementById('favRemoveInput').value;
 
-        var url = '/?id=' + favInput + '';
+        var url = 'https://dry-refuge-63595.herokuapp.com/?id=' + favInput + '';
           return fetch(url, {
             method: "DELETE",
             headers: {
