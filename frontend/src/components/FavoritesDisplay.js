@@ -35,8 +35,8 @@ const FavoritesDisplay = () => {
               "Content-Type": "application/json",
             },
           })
-        .then(response => response.json(),
-        getFavorites());
+        .then(response => response.json())
+        .then(getFavorites());
     }
   
     //this is just where I render the div

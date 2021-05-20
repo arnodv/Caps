@@ -32,8 +32,8 @@ const SearchField = () => {
               "Content-Type": "application/json",
             },
           })
-        .then(response => response.json(),
-        getFavorites());
+          .then(response => response.json())
+          .then(getFavorites());
     }
 
     //I do a fetch based on the search term and then thereafter filter the results to remove any spaces or characters that interfere with the app backend and then build the table row
