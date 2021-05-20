@@ -27,6 +27,7 @@ const SearchField = () => {
         var url = 'https://dry-refuge-63595.herokuapp.com/?data=' + data + '';
           return fetch(url, {
             method: "POST",
+            dataType: "jsonp",
             headers: {
               "Content-Type": "application/json",
             },
